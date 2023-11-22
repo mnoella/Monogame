@@ -1,52 +1,86 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace maze_cs
-{
-    public class Game1 : Game
+using maze_cs.Core;
+
+namespace maze_cs;
+
+public class Game1 : Game
+{   
+    
+    private GraphicsDeviceManager graphics;
+    private SpriteBatch spriteBatch;
+
+    public const int WINDOW_WIDTH = 384;
+    public const int WINDOW_HEIGHT = 384;
+
+    Maze maze;
+    Hero hero;
+
+    public Game1()
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        graphics = new GraphicsDeviceManager(this);
+        Content.RootDirectory = "Content";
+        
 
-        public Game1()
-        {
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            IsMouseVisible = true;
-        }
+        graphics.PreferredBackBufferWidth = WINDOW_WIDTH;
+        graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
+        
+    }
 
-        protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
+    protected override void Initialize()
+    {
+        // TODO: Add your initialization logic here
+        maze = new Maze(new Color(0, 128, 248));
+        hero = new Hero(0, 14, 17, maze);
+        
 
-            base.Initialize();
-        }
+        base.Initialize();
+    }
 
-        protected override void LoadContent()
-        {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+    protected override void LoadContent()
+    {
+        spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-        }
+        maze.Texture = Content.Load<Texture2D>("maze");
+        maze.Position = new Vector2(0,0);
 
-        protected override void Update(GameTime gameTime)
-        {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+        hero.Texture = Content.Load<Texture2D>("hero");
+        hero.Position = new Vector2(30, 30);
+        
+        // Creation du tableau déclaré dans la classe Maze, en tableau 2D
+        maze.colorTab = new Color[maze.Texture.Width * maze.Texture.Height];
+        // Initialise le tableau grace a la methode GetData de la classe Texture
+        // Elle va récupérer les infos de chaque pixel et les stocker à l'endroit adéquat => Detaction de collision
+        maze.Texture.GetData<Color>(maze.colorTab);
+    }
 
-            // TODO: Add your update logic here
+    protected override void Update(GameTime gameTime)
+    {
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            Exit();
 
-            base.Update(gameTime);
-        }
+        graphics.PreferredBackBufferWidth = WINDOW_WIDTH;
+        graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
 
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+        hero.Move(Keyboard.GetState());
+        hero.UpdateFrame(gameTime);
 
-            // TODO: Add your drawing code here
+        base.Update(gameTime);
+    }
 
-            base.Draw(gameTime);
-        }
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.White);
+
+        spriteBatch.Begin();
+            maze.Draw(spriteBatch);
+            hero.DrawAnimation(spriteBatch);
+        spriteBatch.End();
+        
+        base.Draw(gameTime);
     }
 }
