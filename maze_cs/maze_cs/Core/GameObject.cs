@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace projet_cs.Core;
+namespace maze_cs.Core;
 
 public class GameObject
 {

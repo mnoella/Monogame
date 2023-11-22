@@ -1,10 +1,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using projet_cs.Core;
+using maze_cs.Core;
 
 
-namespace projet_cs.Core;
+namespace maze_cs.Core;
 
 public class Hero : GameObject
 {
