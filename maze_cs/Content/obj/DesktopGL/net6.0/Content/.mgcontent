@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/bg.jpg</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/Bmonster.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/coin10.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/coin2.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/coin20.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/coin30.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/flag.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/GameOver.jpg</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/Gmonster.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/hero.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/lives.jpg</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/maze.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/Rmonster.png</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/Roboto.spritefont</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/stranger-things-124008.mp3</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/win.jpg</File>
+    <File>C:/Users/maino/source/repos/Monogame/maze_cs/maze_cs/Content/Ymonster.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
